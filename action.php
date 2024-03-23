@@ -49,19 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // use move_uploaded_file function to save the photo to stoarage, 
     // write an sql sattement to instart the name, projectId, and path to the database
     // thats it
-
-
-
-
-
     }
-
-
-
-
     //$conn->close();
-
-
   }
 }
 

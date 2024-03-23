@@ -36,27 +36,32 @@ Implement file upload functionality.
 Develop file listing, allowing users to view uploaded files.
 Add file deletion functionality.
 Optionally, implement file download functionality.
+
 Simple Authentication System:
 
 Create a basic login form for users to enter their credentials.
 Implement authentication logic using both file-based and MySQL database approaches.
 Develop a registration form for users to create new accounts.
 Implement logout functionality to securely end user sessions.
+
 Form Handling:
 
 Create forms for various user interactions such as file upload, login, and registration.
 Validate form submissions to ensure data integrity.
 Process form data and store it in the appropriate location (file or database).
+
 Error Handling:
 
 Implement error handling mechanisms to gracefully handle unexpected scenarios.
 Utilize try-catch blocks and custom exception handling to manage errors effectively.
 Provide informative error messages to users for better usability.
+
 Object-Oriented PHP:
 
 Understand the principles of object-oriented programming (OOP) in PHP.
 Create classes and objects to encapsulate functionality related to file management, authentication, and data handling.
 Utilize inheritance, encapsulation, and polymorphism to design efficient and maintainable code.
+
 MVC Architecture:
 
 Learn about the Model-View-Controller (MVC) architecture pattern.
