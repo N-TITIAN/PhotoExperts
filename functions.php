@@ -10,16 +10,18 @@ function displayGalleryItem($row)
             <div class="gallery-links d-flex align-items-center justify-content-center">
                 <a href="<?php echo $row['photo_path']; ?>" title="Gallery 1" class="glightbox preview-link"><i
                         class="bi bi-arrows-angle-expand"></i></a>
-                <!--<a href="gallery-single.php/<?php echo $row['project_id'];?>" class="details-link" id="gallerySingle-<?php echo $row['project_id']; ?>"
-                    type="button"><i class="bi bi-link-45deg"></i></a>-->
+              
                  <a href="gallery-single.php?project_id=<?php echo $row['project_id'];?>" class="details-link"
                         id="gallerySingle-<?php echo $row['project_id']; ?>" type="button"><i class="bi bi-link-45deg"></i></a>
+                        <a href="<?php echo $row['photo_path']; ?>" download="<?php echo $row['photo_name']; ?>" class="details-link" title="Download Image"><i
+                                class="bi bi-download"></i></a>
             </div>
 
         </div>
 
     </div>
     <?php
+   
 }
 function custom_header($menuOption, $dropdownOption = '')
 {
@@ -47,10 +49,11 @@ function custom_header($menuOption, $dropdownOption = '')
                                     <?php
                                 }
 
-                                if ($menuOption == $option && $option != "Home") {
+                                elseif ($menuOption == $option && $option != "Home") {
                                     ?>
                                             <li><a href="<?php echo strtolower($option); ?>.php" class="active"><?php echo $option; ?></a></li>
-                                <?php }
+                                <?php } 
+                                
                                
                                 ?>
                                    

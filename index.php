@@ -68,7 +68,7 @@ include "functions.php";
           <h2> <span>Unlock</span> Your Photographic Potential with PhotoExperts</h2>
           <p>Where Every Click Tells a Story, and Every Moment Captures a Lifetime of Emotions.</p>
           <div class="call-to-action">
-            <a href="forms/createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
+            <a href="createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
               data-target="#createProjectModal">Upload Photo Project</a>
             <a href="contact.html" class="btn-get-started-outline">Sign-In</a>
           </div>

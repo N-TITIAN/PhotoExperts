@@ -1,18 +1,28 @@
 
+<?php
+include "dbconfig.php";  //database connection
+
+include "functions.php";
+
+
+
+?>
+
+
 <!-- Create Task Modal -->
-<div class="modal fade" id="createTaskModal" tabindex="-1" role="dialog" aria-labelledby="createTaskModalLabel"
+<div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog" aria-labelledby="createProjectModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createTaskModalLabel">Create Project</h5>
+                <h5 class="modal-title" id="createProjectModalLabel">Create Project</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Form to create a new project -->
-                <form action="../action.php" method="POST" enctype="multipart/form-data">
+                <form action="action.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="projectTitle">Title</label>
                         <input type="text" name="title" class="form-control" id="projectTitle" required>
