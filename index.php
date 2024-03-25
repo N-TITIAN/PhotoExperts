@@ -70,7 +70,7 @@ include "functions.php";
           <div class="call-to-action">
             <a href="createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
               data-target="#createProjectModal">Upload Photo Project</a>
-            <a href="contact.html" class="btn-get-started-outline">Sign-In</a>
+            <a href="sign-in.html" class="btn-get-started-outline">Sign-In</a>
           </div>
 
         </div>

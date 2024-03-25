@@ -1,6 +1,7 @@
 <?php
 
 include "dbconfig.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //create
   if (isset ($_POST["action"]) && $_POST["action"] == "create-project") {
@@ -52,5 +53,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     //$conn->close();
   }
+
+ 
+// Check if the form is submitted
+if(isset($_POST['action']) && $_POST['action'] == "register") {
+    // Retrieve form data
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $fullname = $_POST['fullname'];
+    $repeatPassword = $_POST["password-repeat"];
+
+    // Compare passwords
+   // Compare passwords
+if ($password === $repeatPassword) {
+    // Passwords match, proceed with registration
+    // Registration through file
+    $fileData = "$username|$password|$email|$fullname\n";
+    file_put_contents('users.txt', $fileData, FILE_APPEND);
+
+    // Registration through MySQL
+    $sql = "INSERT INTO users (username, password, email, full_name) VALUES ('$username', '$password', '$email', '$fullname')";
+    if ($conn->query($sql) === TRUE) {
+       
+        header('Location: sign-in.php');
+        exit;
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} else {
+    // Passwords don't match, display error message
+    $error = "Passwords do not match. Please try again.";
+    
+    header('Location: registration.php?error=' . urlencode($error));
+    exit; 
 }
 
+
+}
+}

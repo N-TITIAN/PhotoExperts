@@ -40,7 +40,7 @@ function custom_header($menuOption, $dropdownOption = '')
                 <nav id="navbar" class="navbar">
                     <ul>
                         <?php
-                        $options = array("Home", "About", "Gallery", "Contact", "Services", "Sign-in");
+                        $options = array("Home", "About", "Gallery", "Contact", "Services", "Sign-in",);
                         foreach ($options as $option) {
                             if ($menuOption == $option && $option != "Gallery") {
                                  if($menuOption == $option && $option == "Home"){
