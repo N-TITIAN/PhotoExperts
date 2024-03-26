@@ -77,13 +77,9 @@ $this->email = $email;
     {
         include "dbconfig.php";
         session_start();
-       // $username=$this->username;
-       // $username = $_POST['username'];
-         //$password = $_POST['password'];
-        if ($email == "" || $password == "") {
-            echo "empty";
-            exit();
-        } else {
+        $password = $this->get_password();
+        $username = $this->get_username();
+       
         $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = $conn->query($sql);
 
@@ -91,7 +87,7 @@ $this->email = $email;
             $user = $result->fetch_assoc();
             if (password_verify($password, $user["password"])) {
                 $_SESSION['username'] = $username;
-
+               
                 if (isset ($_POST['rememberme'])) {
                     setcookie('username', $username, time() + (86400 * 30), "/"); // 86400  here= 1 day
                 }
@@ -107,9 +103,12 @@ $this->email = $email;
             header("Location: sign-in.php");
             exit();
         }
-    }
+    
     }
 
 }
 
+class Projects{
+    
+}
 

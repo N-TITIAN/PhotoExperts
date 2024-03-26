@@ -66,9 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $fullname = $_POST['fullname'];
     $repeatPassword = $_POST["password-repeat"];
-    echo "$password";
-    echo "$repeatPassword";
-   
     $new_user= new User();
     $new_user->set_email($email);
     $new_user->set_username($username);
@@ -89,28 +86,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = $conn->query($sql);
+   if ($username == "" || $password == "") {
+            echo "empty";
+            exit();
+        } else {
 
-    if ($result->num_rows > 0) {
-      $user = $result->fetch_assoc();
-      if (password_verify($password, $user["password"])) {
-        $_SESSION['username'] = $username;
-
-        if (isset ($_POST['rememberme'])) {
-          setcookie('username', $username, time() + (86400 * 30), "/"); // 86400  here= 1 day
-        }
-
-        header("Location: index.php");
-        exit();
-      } else {
-        $error = "Invalid username or password.";
-        header("Location: sign-in.php?error=" . urlencode($error));
-        exit();
-      }
-    } else {
-      header("Location: sign-in.php");
-      exit();
-    }
+    $new_user= new User();
+    $new_user->set_username($username);
+    $new_user->set_password($password);
+    $new_user->signin($username, $password);
   }
+}
 }
