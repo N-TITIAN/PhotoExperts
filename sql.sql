@@ -40,3 +40,8 @@ CREATE TABLE testimonials (
     FOREIGN KEY (project_id) REFERENCES projects(project_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+CREATE TABLE sessions (
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
+    data TEXT,
+    timestamp INT(11) UNSIGNED NOT NULL
+);

@@ -1,5 +1,5 @@
 <?php
-
+include "classes.php";
 include "dbconfig.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -60,36 +60,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $username = $_POST['username'];
     $password = $_POST['password'];
+  
+ 
+ 
     $email = $_POST['email'];
     $fullname = $_POST['fullname'];
     $repeatPassword = $_POST["password-repeat"];
+    echo "$password";
+    echo "$repeatPassword";
+   
+    $new_user= new User();
+    $new_user->set_email($email);
+    $new_user->set_username($username);
+    $new_user->set_full_name($fullname);
+    $new_user->set_password($password);
 
-    // Compare passwords
-    // Compare passwords
-    if ($password === $repeatPassword) {
-      // Passwords match, proceed with registration
-      $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-      // Registration through file
-      $fileData = "$username|$hashed_password|$email|$fullname\n";
-      file_put_contents('users.csv', $fileData, FILE_APPEND);
-
-      // Registration through MySQL
-      $sql = "INSERT INTO users (username, password, email, full_name) VALUES ('$username', '$hashed_password', '$email', '$fullname')";
-      if ($conn->query($sql) === TRUE) {
-
-        header('Location: sign-in.php');
-        exit;
-      } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-      }
-    } else {
-      // Passwords don't match, display error message
-      $error = "Passwords do not match. Please try again.";
-
-      header('Location: registration.php?error=' . urlencode($error));
-      exit;
-    }
+    $new_user->register($repeatPassword);
 
 
   }

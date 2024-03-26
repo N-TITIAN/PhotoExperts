@@ -43,13 +43,12 @@ function custom_header($menuOption, $dropdownOption = '')
                         $options = array("Home", "About", "Gallery", "Contact", "Services", "Sign-in",);
                         foreach ($options as $option) {
                             if ($menuOption == $option && $option != "Gallery") {
-                                 if($menuOption == $option && $option == "Home"){
+                                 if($option === "Home" ){
                                     ?>
                                      <li><a href="index.php" class="active"><?php echo $option; ?></a></li>
                                     <?php
                                 }
-
-                                elseif ($menuOption == $option && $option != "Home") {
+                                elseif ($menuOption === $option && $option !== "Home") {
                                     ?>
                                             <li><a href="<?php echo strtolower($option); ?>.php" class="active"><?php echo $option; ?></a></li>
                                 <?php } 

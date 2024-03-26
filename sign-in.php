@@ -55,7 +55,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 text-center">
                         <h2>Sign-in to Account</h2>
-                        
+
                     </div>
                 </div>
             </div>
@@ -65,11 +65,11 @@
         <section id="contact" class="contact">
             <div class="container">
 
-                <div class="row justify-content-center mt-4">
+                <div class="row d-flex justify-content-center mt-4">
 
                     <div class="col-lg-9">
-                        <form action="action.php" method="POST" role="form" >
-                            
+                        <form action="action.php" method="POST" role="form">
+
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="username">Username:</label>
@@ -81,23 +81,23 @@
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="password">Password:</label>
-                                    <input type="password" name="password" class="form-control" id="password"
-                                        required>
+                                    <input type="password" name="password" class="form-control" id="password" required>
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    
+
                                     <input type="checkbox" name="rememberme" id="rememberme">
-                                        <label for="rememberme">Remember me</label>
+                                    <label for="rememberme">Remember me</label>
                                 </div>
 
                             </div>
-                            <div class="text-center"><button type="submit" name="action" value="login">Sign-in</button></div>
-                       <div class="text-center">
-                        <p>Don't have an account? <a href="register.php">Register</a>.</p>
-                        </div>
+                            <div class="text-center"><button type="submit" name="action" value="login">Sign-in</button>
+                            </div>
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="register.php">Register</a>.</p>
+                            </div>
                         </form>
                     </div><!-- End signin Form -->
 
