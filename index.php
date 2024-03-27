@@ -37,6 +37,7 @@ include "functions.php";
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
 
   <!-- =======================================================
   * Template Name: PhotoFolio
@@ -53,7 +54,8 @@ include "functions.php";
   <?php
   include_once "functions.php"; 
   custom_header("Home");
-  ?>
+
+    ?>
 
 
   
@@ -69,7 +71,7 @@ include "functions.php";
           <p>Where Every Click Tells a Story, and Every Moment Captures a Lifetime of Emotions.</p>
           <div class="call-to-action">
             <a href="createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
-              data-target="#createProjectModal">Upload Photo Project</a>
+              data-target="#createProjectModal" id="createProjectModal">Upload Photo Project</a>
             <a href="sign-in.php" class="btn-get-started-outline">Sign-In</a>
           </div>
 

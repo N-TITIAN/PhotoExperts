@@ -1,6 +1,6 @@
 <?php
 include_once "dbconfig.php";
-
+session_start();
 function displayGalleryItem($row)
 {
     ?>
@@ -40,7 +40,7 @@ function custom_header($menuOption, $dropdownOption = '')
                 <nav id="navbar" class="navbar">
                     <ul>
                         <?php
-                        $options = array("Home", "About", "Gallery", "Contact", "Services", "Sign-in",);
+                        $options = array("Home", "About", "Gallery", "Contact", "Services", "Sign-in");
                         foreach ($options as $option) {
                             if ($menuOption == $option && $option != "Gallery") {
                                  if($option === "Home" ){
@@ -87,8 +87,14 @@ function custom_header($menuOption, $dropdownOption = '')
                         ?>
                     </ul>
                 </nav><!-- .navbar -->
-
+                      
                 <div class="header-social-links">
+       
+                    <form action="action.php"  method="post">
+                        <button type="submit" name="submit" class="btn btn-default btn-sm" value="logout">
+                            Log out
+                        </button>
+                    </form>
                     <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                     <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>

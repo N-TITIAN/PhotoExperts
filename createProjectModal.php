@@ -55,6 +55,7 @@ include "functions.php";
                         
                         <input type="text" name="url" class="form-control" id="projecUrl" required>
                     </div>
+                     <input type="hidden" value="<?php echo $row['id']; ?>" name="project_id" />
                     <div class="modal-footer">
                         <button type="button" class="btn-get-started-outline" data-dismiss="modal">Close</button>
                         <button name="action" value="create-project" type="submit" class="btn-get-started">Upload project</button>
