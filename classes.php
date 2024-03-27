@@ -12,9 +12,7 @@ class User
     {
         $this->full_name = $full_name;
     }
-    // function set_user_id($user_id){
-    //     $this->user_id = $user_id;
-    // }
+   
     function set_username($username)
     {
         $this->username = $username;
@@ -31,9 +29,7 @@ class User
     {
         return $this->full_name;
     }
-    // function get_user_id(){
-    //     return $this->user_id;
-    // }
+   
     function get_username()
     {
         return $this->username;
@@ -103,16 +99,11 @@ class User
             $user = $result->fetch_assoc();
             if (password_verify($password, $user["password"])) {
               session_start();
-                //$session_here->session("$username", $user['user_id']);
+                
               
                  $_SESSION['username'] = $username;
                  $_SESSION['user_id'] = $user['user_id'];
-                // //get user_id
-                // $id="SELECT * FROM users  WHERE username = '".$_SESSION['username'];
-                // $id_result= $conn->query($id);
-                //      ($id_result->num_rows > 0) {
-                //     $_SESSION['id'] = $id_result->fetch_assoc();
-                //     }
+               
                 if (isset ($_POST['rememberme'])) {
                     setcookie('username', $username, time() + (86400 * 30), "/"); // 86400  here= 1 day
                 }
@@ -131,11 +122,7 @@ class User
 
     }
 
-    function logout(){
-        session_destroy();
-        $error="logout sucessfull";
-        header("index.php?error=".urlencode($this->get_username($error)));
-    }
+ 
 }
 //project class
 class Projects
