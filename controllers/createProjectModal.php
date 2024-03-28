@@ -1,6 +1,6 @@
 
 <?php
-include "dbconfig.php";  //database connection
+include "./models/dbconfig.php";  //database connection
 
 include "functions.php";
 

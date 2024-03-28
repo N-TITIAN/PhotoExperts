@@ -1,5 +1,5 @@
 <?php
-include_once "dbconfig.php";
+include_once "../models/dbconfig.php";
 session_start();
 function displayGalleryItem($row)
 {
@@ -43,14 +43,14 @@ function custom_header($menuOption, $dropdownOption = '')
                         $options = array("Home", "About", "Gallery", "Contact", "Services", "Sign-in");
                         foreach ($options as $option) {
                             if ($menuOption == $option && $option != "Gallery") {
-                                 if($option === "Home" ){
+                                 if($menuOption === $option && $option === "Home" ){
                                     ?>
-                                     <li><a href="index.php" class="active"><?php echo $option; ?></a></li>
+                                     <li><a href="../view/index.php" class="active"><?php echo $option; ?></a></li>
                                     <?php
                                 }
                                 elseif ($menuOption === $option && $option !== "Home") {
                                     ?>
-                                            <li><a href="<?php echo strtolower($option); ?>.php" class="active"><?php echo $option; ?></a></li>
+                                            <li><a href="../view/<?php echo strtolower($option); ?>.php" class="active"><?php echo $option; ?></a></li>
                                 <?php } 
                                 
                                
@@ -60,14 +60,14 @@ function custom_header($menuOption, $dropdownOption = '')
                                 
                             elseif ($menuOption == $option && $option == "Gallery") { ?>
                                         <li class="dropdown">
-                                            <a href="gallery.php"><span><?php echo $option; ?></span> <i
+                                            <a href="../view/gallery.php"><span><?php echo $option; ?></span> <i
                                                         class="bi bi-chevron-down dropdown-indicator"></i></a>
                                             <ul>
                                                 <?php
                                                 $dropdownOptions = array("Nature", "People", "Architecture", "Animals", "Sports", "Travel");
                                                 foreach ($dropdownOptions as $dropdownItem) {
                                                     ?>
-                                                        <li><a href="gallery.php"><?php echo $dropdownItem; ?></a></li>
+                                                        <li><a href="../view/gallery.php"><?php echo $dropdownItem; ?></a></li>
                                                 <?php } ?>
                                                 <li class="dropdown">
                                                     <a href="#"><span>Sub Menu</span> <i
@@ -81,7 +81,7 @@ function custom_header($menuOption, $dropdownOption = '')
                                             </ul>
                                         </li>
                                 <?php } else { ?>
-                                        <li><a href="<?php echo strtolower($option); ?>.php"><?php echo $option; ?></a></li>
+                                        <li><a href="../view/<?php echo strtolower($option); ?>.php"><?php echo $option; ?></a></li>
                                 <?php }
                         }
                         ?>

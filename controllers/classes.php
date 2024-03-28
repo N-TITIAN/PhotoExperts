@@ -54,7 +54,7 @@ class User
     }
     public function register($passwordrepeat)
     {
-        include "dbconfig.php";
+        include "../models/dbconfig.php";
 
         if ($this->get_password() == $passwordrepeat) {
 
@@ -69,7 +69,7 @@ class User
             $sql = "INSERT INTO users (username, password, email, full_name) VALUES ('$username', '$hashed_password', '$email', '$fullname')";
             if ($conn->query($sql) === TRUE) {
 
-                header('Location: sign-in.php');
+                header('Location: ../view/sign-in.php');
                 exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn_error;
@@ -78,7 +78,7 @@ class User
             // Passwords don't match, display error message
             $error = "Passwords do not match. Please try again.";
 
-            header('Location: register.php?error=' . urlencode($error));
+            header('Location: ../view/register.php?error=' . urlencode($error));
             exit;
         }
 
@@ -87,7 +87,7 @@ class User
     //method to login
     public function signin($username, $password)
     {
-        include "dbconfig.php";
+        include "../models/dbconfig.php";
      
         $password = $this->get_password();
         $username = $this->get_username();
@@ -108,15 +108,15 @@ class User
                     setcookie('username', $username, time() + (86400 * 30), "/"); // 86400  here= 1 day
                 }
 
-                header("Location: index.php");
+                header("Location: ../view/index.php");
                 exit();
             } else {
                 $error = "Invalid username or password.";
-                header("Location: sign-in.php?error=" . urlencode($error));
+                header("Location: ../view/sign-in.php?error=" . urlencode($error));
                 exit();
             }
         } else {
-            header("Location: sign-in.php");
+            header("Location: ../view/sign-in.php");
             exit();
         }
 
@@ -187,7 +187,7 @@ class Projects
     }
 // methods 
 function create_new_project(){
-    include "dbconfig.php";
+        include "../models/dbconfig.php";
     include "functions.php";
    $project_title=$this->get_project_title();
    $project_description=$this->get_project_description();
@@ -210,7 +210,7 @@ function create_new_project(){
         if ($path != '') {
 
           $photo_name = uniqid() . '.' . pathinfo($_FILES['photos']['name'][$i], PATHINFO_EXTENSION);
-          $newPath = 'assets/img/gallery/' . $photo_name;
+          $newPath = '../assets/img/gallery/' . $photo_name;
 
           move_uploaded_file($path, $newPath);
 
@@ -222,7 +222,7 @@ function create_new_project(){
         }
       }
 
-      header('Location: index.php');
+      header('Location: ../view/index.php');
       exit();
     }
     //$conn->close();

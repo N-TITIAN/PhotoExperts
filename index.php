@@ -1,7 +1,7 @@
 <?php
-include "dbconfig.php";  //database connection
-include "forms/createProjectModal.php";
-include "functions.php";
+include "models/dbconfig.php";  //database connection
+include "controllers/createProjectModal.php";
+
 
 
 
@@ -52,7 +52,7 @@ include "functions.php";
 
   <!-- ======= Header ======= -->
   <?php
-  include_once "functions.php"; 
+  include_once "controllers/functions.php"; 
   custom_header("Home");
 
     ?>
@@ -89,7 +89,7 @@ include "functions.php";
         <div class="row gy-4 justify-content-center">
 
           <?php
-          include_once "functions.php";
+          include_once "controllers/functions.php";
          
           $sql = "SELECT * FROM photos";
           
@@ -98,11 +98,7 @@ include "functions.php";
           if ($result->num_rows > 0) {
     
             while ($row = $result->fetch_assoc()) {
-            /* $sql2 = "SELECT * FROM projects WHERE project_id=$row[project_id]";
-              $result2 = $conn->query($sql2);
-              while ($row2 = $result->fetch_assoc()) {
-                $project_id = $row2["project_id"];
-              }*/
+           
             displayGalleryItem($row);
           
               }

@@ -1,6 +1,6 @@
 <?php
 include "classes.php";
-include "dbconfig.php";
+include "../models/dbconfig.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
