@@ -67,3 +67,11 @@ MVC Architecture:
 Learn about the Model-View-Controller (MVC) architecture pattern.
 Separate components of your application into models, views, and controllers.
 Implement a small project following the MVC pattern, ensuring clear separation of concerns and modularity.
+  
+
+  undone
+-creating tests
+-restricting menu
+-dashboard 
+-contact
+-about user
