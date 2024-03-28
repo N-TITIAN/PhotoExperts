@@ -222,7 +222,7 @@ function create_new_project(){
         }
       }
 
-      header('Location: ../view/index.php');
+      header('Location: ../index.php');
       exit();
     }
     //$conn->close();

@@ -68,7 +68,7 @@
                 <div class="row d-flex justify-content-center mt-4">
 
                     <div class="col-lg-9">
-                        <form action="action.php" method="POST" role="form">
+                        <form action="../controllers/action.php" method="POST" role="form">
 
                             <div class="row">
                                 <div class="col-md-6 form-group">

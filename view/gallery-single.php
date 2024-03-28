@@ -66,7 +66,8 @@ error_reporting(E_ALL);
               odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum
               dolorem.</p>
 
-            <a class="cta-btn" href="contact.html">Upload a project</a>
+             <a href="../controllers/createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
+              data-target="#createProjectModal" id="createProjectModal">Upload Photo Project</a>
 
           </div>
         </div>
@@ -128,7 +129,7 @@ error_reporting(E_ALL);
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <div>
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <img src="../assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                   <h3>Sara Wilsson</h3>
                   <h4>Designer</h4>
                 </div>

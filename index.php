@@ -2,9 +2,6 @@
 include "models/dbconfig.php";  //database connection
 include "controllers/createProjectModal.php";
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,9 +67,9 @@ include "controllers/createProjectModal.php";
           <h2> <span>Unlock</span> Your Photographic Potential with PhotoExperts</h2>
           <p>Where Every Click Tells a Story, and Every Moment Captures a Lifetime of Emotions.</p>
           <div class="call-to-action">
-            <a href="createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
+            <a href="controllers/createProjectModal.php" class="btn-get-started" type="button" data-toggle="modal"
               data-target="#createProjectModal" id="createProjectModal">Upload Photo Project</a>
-            <a href="sign-in.php" class="btn-get-started-outline">Sign-In</a>
+            <a href="view/sign-in.php" class="btn-get-started-outline">Sign-In</a>
           </div>
 
         </div>

@@ -41,8 +41,7 @@
 
  <!-- ======= Header ======= -->
   <?php
-  include_once "../controllers/functions.php"; 
-  
+ 
   
   custom_header("Gallery");
   ?>
@@ -83,6 +82,7 @@
             while ($row = $result->fetch_assoc()) {
 
               displayGalleryItem($row);
+
 
             }
           }

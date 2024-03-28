@@ -94,6 +94,97 @@
         </div>
     </header><!-- End Header -->
 
+    
+<!-- ======= Gallery Single Section ======= -->
+<section id="gallery-single" class="gallery-single" id="gallerySingle-<?php echo $row['project_id']; ?>">
+        <div class="container">
+            <div class="position-relative h-100">
+                <div class="slides-1 portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <?php
+                        include_once "../controllers/functions.php";
+                        if (isset($_GET['project_id'])) {
+                            $project_id = $_GET['project_id'];
+                            $sql = "SELECT * FROM photos WHERE project_id = $project_id";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <img src="<?php echo $row["photo_path"]; ?>" alt="images">
+                                    </div>
+                                    <?php
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <?php
+            if (isset($_GET['project_id'])) {
+                $project_id = $_GET['project_id'];
+                $sql = "SELECT * FROM projects WHERE project_id = $project_id";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    ?>
+                    <div class="row justify-content-between gy-4 mt-4">
+                        <div class="col-lg-8">
+                            <div class="portfolio-description">
+                                <h2 class="project-title">
+                                    <?php echo $row["project_title"]; ?>
+                                </h2>
+                                <p class="description">
+                                    <?php echo $row["project_description"]; ?>
+                                </p>
+                                <div class="testimonial-item">
+                                    <!--comments-->
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum
+                                        eram malis
+                                        quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                    <div>
+                                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                        <h3>Sara Wilsson</h3>
+                                        <h4>Designer</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="portfolio-info">
+                                <h3>Project information</h3>
+                                <ul>
+                                    <li><strong>Category</strong> <span>
+                                            <?php echo $row["category"]; ?>
+                                        </span></li>
+                                    <li><strong>Owner</strong> <span>ASU Company</span></li>
+                                    <li><strong>Project date</strong> <span>
+                                            <?php echo $row["project_date"]; ?>
+                                        </span></li>
+                                    <li><strong>Project URL</strong> <a href="<?php echo $row["project_url"]; ?>">
+                                            <?php echo $row["project_url"]; ?>
+                                        </a></li>
+                                    <li><a href="<?php echo $row["project_url"]; ?>" class="btn-visit align-self-start">Visit
+                                            Website</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </section><!-- End Gallery Single Section -->
+    
  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="container">

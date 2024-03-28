@@ -1,20 +1,26 @@
 <?php
-include_once "../models/dbconfig.php";
+
+// include_once "../models/dbconfig.php";
 session_start();
 function displayGalleryItem($row)
 {
+    $relative_path =  str_replace("../", "", $row["photo_path"]);
+    /**
+     * ../assets/img/gallery/656653rt0.png
+     */
     ?>
     <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="gallery-item h-100">
-            <img src="<?php echo $row['photo_path']; ?>" class="img-fluid" alt="<?php echo $row['photo_name']; ?>">
+            <img src="<?php echo $relative_path ?>" class="img-fluid" alt="<?php echo $row['photo_name']; ?>">
             <div class="gallery-links d-flex align-items-center justify-content-center">
                 <a href="<?php echo $row['photo_path']; ?>" title="Gallery 1" class="glightbox preview-link"><i
                         class="bi bi-arrows-angle-expand"></i></a>
               
-                 <a href="gallery-single.php?project_id=<?php echo $row['project_id'];?>" class="details-link"
+                 <a href="view/gallery-single.php?project_id=<?php echo $row['project_id'];?>" class="details-link"
                         id="gallerySingle-<?php echo $row['project_id']; ?>" type="button"><i class="bi bi-link-45deg"></i></a>
-                        <a href="<?php echo $row['photo_path']; ?>" download="<?php echo $row['photo_name']; ?>" class="details-link" title="Download Image"><i
-                                class="bi bi-download"></i></a>
+
+                <a href="<?php echo $row['photo_path']; ?>" download="<?php echo $row['photo_name']; ?>" class="details-link" title="Download Image"><i
+                        class="bi bi-download   "></i></a>
             </div>
 
         </div>
