@@ -69,47 +69,47 @@
 
                 <div class="row justify-content-center mt-4">
 
-                    <div class="col-lg-9">
+                    <div class="col-lg-4">
                         <form action="../controllers/action.php" method="POST" role="form"  >
                            
 
                             <div class="row  ">
-                                <div class="col-md-6 form-group ">
+                                <div class=" form-group ">
                                 <label for="fullname"><b>Full name:</b></label>
                                  <input type="text" placeholder="Fullnames here.." name="fullname" id="fullname"class="form-control" required>
                                 </div>
 
                             </div>
                              <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
                                 <label for="email"><b>Email:</b></label>
                                  <input type="text" placeholder="Email here.." name="email" id="email"class="form-control" required>
                                 </div>
 
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
                                 <label for="username"><b>Username:</b></label>
                                  <input type="text" placeholder="username here.." name="username" id="username"class="form-control" required>
                                 </div>
 
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
                                     <label for="password">Password:</label>
                                     <input type="password" name="password" class="form-control" id="password" required>
                                 </div>
 
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
                                     <label for="password-repeat">Repeate Password:</label>
                                     <input type="password" name="password-repeat" class="form-control" id="password-repeat" required>
                                 </div>
 
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
 
                                     <input type="checkbox" name="rememberme" id="rememberme">
                                     <label for="rememberme">Remember me</label>
