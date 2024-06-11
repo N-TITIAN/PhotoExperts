@@ -108,7 +108,7 @@ class User
                     setcookie('username', $username, time() + (86400 * 30), "/"); // 86400  here= 1 day
                 }
 
-                header("Location: ../view/index.php");
+                header("Location: ../view/dashboard.php");
                 exit();
             } else {
                 $error = "Invalid username or password.";
