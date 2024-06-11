@@ -63,7 +63,7 @@
 
         <!-- ======= signin Section ======= -->
         <section id="contact" class="contact">
-            <div class="container">
+            <div class="container justify-content-center">
 
                 <div class="row d-flex justify-content-center mt-4">
 
@@ -71,7 +71,7 @@
                         <form action="../controllers/action.php" method="POST" role="form">
 
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
                                     <label for="username">Username:</label>
                                     <input type="text" name="username" class="form-control" id="username"
                                         placeholder="Your Username" required>
@@ -79,14 +79,14 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
                                     <label for="password">Password:</label>
                                     <input type="password" name="password" class="form-control" id="password" required>
                                 </div>
 
                             </div>
                             <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class=" form-group">
 
                                     <input type="checkbox" name="rememberme" id="rememberme">
                                     <label for="rememberme">Remember me</label>
@@ -141,6 +141,7 @@
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </body>
 
