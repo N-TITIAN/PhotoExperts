@@ -67,11 +67,11 @@
 
                 <div class="row d-flex justify-content-center mt-4">
 
-                    <div class="col-lg-9">
+                    <div class="col-lg-4">
                         <form action="../controllers/action.php" method="POST" role="form">
 
                             <div class="row">
-                                <div class=" form-group">
+                                <div class=" form-group ">
                                     <label for="username">Username:</label>
                                     <input type="text" name="username" class="form-control" id="username"
                                         placeholder="Your Username" required>
